@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -26,9 +27,15 @@ const Navbar = () => {
     <nav>
       {(toggleMenu || navBarwidth > 500) && (
         <ul className="list">
-          <li className="items">Accueil</li>
-          <li className="items">Ecrire</li>
-          <li className="items">Contact</li>
+          <Link to="/">
+            <li className="items">Accueil</li>
+          </Link>
+          <Link to="/add-article">
+            <li className="items">Add</li>
+          </Link>
+          <Link to="/contact">
+            <li className="items">Contact</li>
+          </Link>
         </ul>
       )}
       <button onClick={toggleNav} className="btn">
